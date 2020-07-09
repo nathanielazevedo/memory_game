@@ -1,0 +1,73 @@
+
+body{
+  background-color: black;
+  text-align: center;
+}
+
+#title{
+  color: darkolivegreen;
+  text-align: center;
+  padding-top: 20vh;
+  font-size: 50px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#game div {
+  width: 15%;
+  height: 100px;
+  margin: 5px;
+  display: inline-block;
+}
+
+#game{
+  background: black;
+  border: none;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 30vh;
+}
+
+div{
+  border: white solid 1px;
+}
+
+.counters{
+  background: black;
+  color: darkolivegreen;
+  width: 50%;
+}
+
+#start{
+  background-color: black;
+  border: solid white 1px;
+  margin-top: 10%;
+  padding: 30px 90px;
+  font-size: 25px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#yourScore{
+  width: 100%;
+  padding-top: 10vh;
+  font-size: xx-large; 
+  color: white;
+}
+
+#reload{
+  color: darkolivegreen;
+  display: block;
+  width: 30%;
+  margin-top: 15vh;
+  padding: 30px 90px;
+  border: white 1px solid;
+  font-size: 25px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#congrats{
+  font-size: 50px;
+  width: 55%;
+}
+
