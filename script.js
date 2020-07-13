@@ -67,11 +67,9 @@ function handleCardClick(event) {
   let thisCard = event.target;
   let counters = document.getElementsByClassName('counters');
   
-//if they're trying to choose a third card quickly.
-  if(card1 && card2) return;
+//if they're trying to choose a third card quickly or if they're clicking the same card.
+  if(card1 && card2 || card1 == thisCard) return;
 
-//if they're clicking the same card
-  if(card1 == thisCard) return;
 
 //if this is the first click.
   else if(!card1 && !card2){ 
@@ -113,9 +111,10 @@ function handleCardClick(event) {
  
 //to check if the player has won the game.
   if(flipped == (COLORS.length) ) {
-//to check if they got the new high score.
-    if(localStorage.getItem('low-score') >= count || localStorage.getItem('low-score') == null){
-      gameContainer.innerHTML = `<span id="congrats" >GREAT JOB! </span> <span id="yourScore"> You got a new low score of ${count} </span> <span onclick="window.location.reload()" id="reload"> NewGame</span>`;
+
+//if they did get the new high score.
+    if(localStorage.getItem('low-score') > count){
+      gameContainer.innerHTML = `<span id="congrats" >GREAT JOB! </span> <span id="yourScore"> You got the new best score of ${count} </span> <span onclick="window.location.reload()" id="reload"> NewGame</span>`;
       localStorage.setItem('low-score', count);
      }
 
@@ -138,7 +137,7 @@ function randomRGB(){
   return `rgb(${r},${g},${b}) `;
 }
 
-//making the start button pretyy.
+//making the start button pretty.
 const titled = document.querySelector('button');
 setInterval(function(){
   titled.style.color = randomRGB(); 
