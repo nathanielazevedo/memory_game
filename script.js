@@ -1,4 +1,3 @@
-
 //later we use this to append newDiv's to it.
 const gameContainer = document.getElementById("game");
 let counter = document.createElement('h3');
@@ -18,13 +17,11 @@ function shuffle(array) {
     array[counter] = array[index];
     array[index] = temp;
   }
-
   return array;
 }
 
 //shuffle the array we provided 'COLORS' and same it to a the variable shuffledColors.
 let shuffledColors = shuffle(COLORS);
-
 let startButton = document.getElementById('start');
 
 // this function loops over the array of colors
@@ -48,7 +45,6 @@ function createDivsForColors(colorArray) {
   title.style.display = 'none';
   startButton.style.display = 'none';
 
-  
   counter.innerText = count;
   counter.classList.add('count');
   gameContainer.append(counter);
@@ -89,7 +85,6 @@ function handleCardClick(event) {
     thisCard.style.backgroundColor = thisCard.classList;
     card2 = thisCard;
 
-
     if(card2.classList.value != card1color){
       setTimeout(function(){
           console.log('card2 does not match card1')
@@ -111,9 +106,8 @@ function handleCardClick(event) {
               card1 = 0;
               card2 = 0;
               noClicking = 0;
-          }, 1000);
+          }, 1000)
       
-
         //to check if the player has won the game.
           if(flipped == (COLORS.length)){
 
@@ -131,8 +125,8 @@ function handleCardClick(event) {
                 localStorage.setItem('low-score', count);
               }
 
-            else{
-            gameContainer.innerHTML = `<span id="congrats" >GOOD JOB! </span> <span id="yourScore"> Your score: ${count} <br> Best score: ${localStorage.getItem('low-score')} </span> <span onclick="window.location.reload()" id="reload"> New Game</span> `;}}
+              else{
+              gameContainer.innerHTML = `<span id="congrats" >GOOD JOB! </span> <span id="yourScore"> Your score: ${count} <br> Best score: ${localStorage.getItem('low-score')} </span> <span onclick="window.location.reload()" id="reload"> New Game</span> `;}}
 
             const congra = document.querySelector('#congrats');   
             setInterval(function(){  
@@ -154,7 +148,4 @@ function randomRGB(){
 const titled = document.querySelector('button');
 setInterval(function(){
   titled.style.color = randomRGB(); 
-}, 1000);
-
-
-
+}, 1000)
